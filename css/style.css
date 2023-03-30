@@ -1,0 +1,119 @@
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+body {
+    color: white;
+    background-color: black;
+}
+/* HEADER */
+.header {
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.header img {
+    height: 60px;
+}
+
+/* TODOS */
+main {
+    margin-top: 4rem;
+}
+
+.wrapper {
+    width: 60%;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.new-todo {
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid white;
+}
+
+input {
+    padding: .4rem .8rem;
+    border-radius: 5px;
+}
+
+.add-btn {
+    padding: .4rem .8rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.check-mark {
+    color: green;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.cross-mark {
+    color: red;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.completed-task {
+    text-decoration: line-through;
+}
+li {
+    font-size: 2rem;
+}
+h1 {
+    font-size: 3rem;
+}
+img {
+    width: 400px;
+    height: 300px;
+    background-size: contain;
+    margin: 5px;
+    border-radius: 10px;
+    
+    
+}
+img:hover {
+    scale: 1.2;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.completed {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    width: 80%;
+}
+.titlecomple {
+    margin-bottom: 20px;
+    color: brown;
+}
+

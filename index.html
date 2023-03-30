@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <main>
+            <div class="wrapper">
+                <h1 v-if="!allCompleted">TODO LIST</h1>
+                <div class="new-todo" v-if="!allCompleted">
+                    <input type="text" placeholder="Aggiugni un nuovo todo" v-model.trim="newTodoText" @keyup.enter="addTodo"/>
+                    <button class="add-btn" @click="addTodo">Aggiungi</button>
+                </div>
+
+                <ul class="todo-list" v-if="!allCompleted">
+                    <li v-for="(todo, index) in todos">
+                        <p :class="{ 'completed-task': !todo.done }">{{ todo.text }}</p>
+                        <span v-if="!todo.done" class="check-mark" @click="toggleTodo(todo)">&#10003;</span>
+                        <span v-else class="cross-mark" @click="toggleTodo(todo)">&#10005;</span>
+                    </li>
+                </ul>
+
+            </div>
+            <div v-if="allCompleted" class="completed">
+                <div class="titlecomple">
+                    <h2>HAI FINITO!!!</h2>
+                    <p>Ora scegli il gioco a cui vuoi giocare</p>
+                </div>
+                <div class="container_img" >
+                    <div class="images">
+                      <img src="img/wow.gif" alt="Immagine 1">
+                      <img src="img/overwatch.gif" alt="Immagine 2">
+                      <img src="img/lol.gif" alt="Immagine 3">
+                      <img src="img/legacy.gif" alt="Immagine 4">
+                      <img src="img/diablo.gif" alt="Immagine 5">
+                      <img src="img/rust.gif" alt="Immagine 6">
+                    </div>
+
+                </div>
+              </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
