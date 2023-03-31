@@ -16,9 +16,9 @@
 
         <main>
             <div class="wrapper">
-                <h1 v-if="!allCompleted">TODO LIST</h1>
+                <h1 v-if="!allCompleted">TODO COSE DA FARE</h1>
                 <div class="new-todo" v-if="!allCompleted">
-                    <input type="text" placeholder="Aggiugni un nuovo todo" v-model.trim="newTodoText" @keyup.enter="addTodo"/>
+                    <input type="text" placeholder="Che te manca?" v-model.trim="newTodoText" @keyup.enter="addTodo" />
                     <button class="add-btn" @click="addTodo">Aggiungi</button>
                 </div>
 
@@ -31,23 +31,31 @@
                 </ul>
 
             </div>
-            <div v-if="allCompleted" class="completed">
+            <div :style="{ backgroundImage: backgroundUrl }" v-if="allCompleted" class="completed">
+
                 <div class="titlecomple">
                     <h2>HAI FINITO!!!</h2>
                     <p>Ora scegli il gioco a cui vuoi giocare</p>
-                </div>
-                <div class="container_img" >
+                </div>  
+
+                <div class="container_img">
                     <div class="images">
-                      <img src="img/wow.gif" alt="Immagine 1">
-                      <img src="img/overwatch.gif" alt="Immagine 2">
-                      <img src="img/lol.gif" alt="Immagine 3">
-                      <img src="img/legacy.gif" alt="Immagine 4">
-                      <img src="img/diablo.gif" alt="Immagine 5">
-                      <img src="img/rust.gif" alt="Immagine 6">
+                        <img src="img/wow.gif" alt="Immagine 1" @mouseover="setBackgroundUrl('img/wow.gif')"
+                            @mouseout="clearBackgroundUrl">
+                        <img src="img/overwatch.gif" alt="Immagine 2" @mouseover="setBackgroundUrl('img/overwatch.gif')"
+                            @mouseout="clearBackgroundUrl">
+                        <img src="img/lol.gif" alt="Immagine 3" @mouseover="setBackgroundUrl('img/lol.gif')"
+                            @mouseout="clearBackgroundUrl">
+                        <img src="img/legacy.gif" alt="Immagine 4" @mouseover="setBackgroundUrl('img/legacy.gif')"
+                            @mouseout="clearBackgroundUrl">
+                        <img src="img/diablo.gif" alt="Immagine 5" @mouseover="setBackgroundUrl('img/diablo.gif')"
+                            @mouseout="clearBackgroundUrl">
+                        <img src="img/rust.gif" alt="Immagine 6" @mouseover="setBackgroundUrl('img/rust.gif')"
+                            @mouseout="clearBackgroundUrl">
                     </div>
 
                 </div>
-              </div>
+            </div>
         </main>
     </div>
 

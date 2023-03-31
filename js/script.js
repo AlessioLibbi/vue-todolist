@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            
+
             newTodoText: '',
             todos: [
                 {
@@ -20,7 +20,7 @@ createApp({
                 }
             ],
             allCompleted: false,
-            
+            backgroundUrl: "",
         }
     },
     methods: {
@@ -39,7 +39,14 @@ createApp({
         },
         checkAllCompleted() {
             this.allCompleted = this.todos.every(todo => !todo.done)
-        }
+        },
+        setBackgroundUrl(imageUrl) {
+            this.backgroundUrl = `url(${imageUrl})`;
+        },
+        clearBackgroundUrl() {
+            this.backgroundUrl = "";
+        },
+
     }
 
 }).mount("#app")
